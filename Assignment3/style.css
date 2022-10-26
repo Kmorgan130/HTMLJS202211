@@ -1,0 +1,28 @@
+body{
+    background-color: beige;
+    background-image: url(../Assignment2/images/background.png);
+    font-family: 'Courier New', Courier, monospace;
+    color: blueviolet;
+    font-size: large;
+}
+#container{
+    width: 970px;
+    padding: 10px;
+}
+h1{
+    width: 950px;
+    padding: 10px;
+    text-align: center;
+    background-color: aqua;
+    border: 1px solid plum
+}
+h2{
+    width: 950px;
+    padding: 10px;
+    background-color: aquamarine;
+    text-align: left;
+}
+figure{
+    margin: auto;
+    text-align: center;
+}
