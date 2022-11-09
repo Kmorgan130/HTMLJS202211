@@ -5,13 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Riddels with JavaScript</title>
+    <style>
+        @font-face {
+            font-family: party;
+            src: url(Font/Larissa.ttf);
+        }
+        body{
+            font-family: party;
+            color: green;
+            
+        
+        }
+    </style>
 </head>
 <body>
     <ul>
         <li>
             <p>What is black and white and read all over</p>
             <br>
-            <p onclick="showAnswer('answer','A newspaper')" id="answer">Answer</p>
+            <button onclick="showAnswer('answer','A newspaper')">Click for Answer</button>
+            <span id="answer">Answer</span>
+            <hr>
         </li>
         <li>
            <p>What gets bigger the more that is taken away??</p>
