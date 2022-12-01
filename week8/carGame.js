@@ -6,6 +6,8 @@ var timer = requestAnimationFrame(main);
 var start = 50
 var finish = 750
 var carPos = 2;
+var speed = 3
+var carWidth = 50
 
 var startfuel = randomNumber(canvas.width, 600)
 var fuel = startfuel;
@@ -15,6 +17,15 @@ var gameOver = true;
 var seconds = 3;
 var fps = 60;
 var frames = fps;
+
+//load game sprite
+var carSprite = new Image()
+carSprite.src = "image/car.webp"
+
+carSprite.onload = function(){
+main()
+
+}
 
 //add some event listeners
 document.addEventListener("keydown", keyPressDown)
@@ -79,16 +90,17 @@ function drawStartFinish(){
 }
 
 function drawCar(){
-//draw a car
-    ctx.fillStyle = "red";
-    ctx.fillRect(carPos,canvas.height/2, 40, 20);
+    //draw a car
+    //ctx.fillStyle = "red";
+    //ctx.fillRect(carPos,canvas.height/2, 40, 20);
+    ctx.drawImage(carSprite, carPos, canvas.height/2, carWidth, 20)
 }
 
 function drawFuelBar(){
-    var currentBarWidth = fuelBarWidth * (fuel/startFuel)
+    var currentBarWidth = fuelBarWidth * (fuel/startfuel)
     ctx.fillStyle = "black"
     ctx.fillRect(start, 30, fuelBarWidth, 10)
-    ctx.font = "25px Ariel"
+    ctx.font = "25px Arial"
     ctx.fillText("Fuel", start, 25)
     if(fuel > 0){
     ctx.fillStyle = "green"
@@ -97,16 +109,16 @@ function drawFuelBar(){
 }
 
 function drawResults(){
-    if(carPos + 40> finish){
+    if(carPos + carWidth > finish){
         ctx.fillStyle = "black"
-        ctx.font = "25px Ariel"
+        ctx.font = "25px Arial"
         ctx.textAlign = "center"
         ctx.fillText("You made it to the finsih... You Win!", canvas.width/2, canvas.height/2)
     
 
      }else{
         ctx.fillStyle = "black"
-        ctx.font = "25px Ariel"
+        ctx.font = "25px Arial"
         ctx.textAlign = "center"
         ctx.fillText("You ran out of fuel... You Lose!", canvas.width/2, canvas.height/2)
     }
@@ -126,10 +138,11 @@ function runStartTimer(){
 
 function drawStartTimer(){
         ctx.fillStyle = "black"
-        ctx.font = "25px Ariel"
+        ctx.font = "25px Arial"
         ctx.textAlign = "center"
         ctx.fillText(seconds, canvas.width/2, canvas.height/2)
 }
+
 
 function randomNumber(high,low){
     return Math.round(Math.random() * (high-low)+low)

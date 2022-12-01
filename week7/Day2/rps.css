@@ -1,0 +1,41 @@
+canvas{
+    border: 1px solid black;
+    background-color: purple;
+}
+@font-face {
+    font-family: party;
+    src: url(font/BLOBBYCHUG.ttf);
+    font-size: 16px;
+}
+body{
+    font-family: party;
+    color: purple;
+    font-size: 25px;
+    background-image: url(../Day2/images/background.jpg);
+    background-size: cover;
+    text-align: center;
+   
+}
+button{
+    color: purple;
+}
+.score{
+    display: flex;
+    width: 30vw;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 70px;
+    z-index: 1;
+}
+ 
+/* Score  */
+.p-count,.c-count{
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: blue;
+}
+h2{
+    color: blue;
+}
+
