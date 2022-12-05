@@ -3,15 +3,15 @@ var ctx = canvas.getContext("2d")
 
 var timer = requestAnimationFrame(main);
 
-var start = 50
-var finish = 750
+var start = 58
+var finish = 956
 var carPos = 2;
-var speed = 3
+var speed = 5
 var carWidth = 50
 
 var startfuel = randomNumber(canvas.width, 600)
 var fuel = startfuel;
-var fuelBarWidth = 300
+var fuelBarWidth = 512
 var gameOver = true;
 
 var seconds = 3;
@@ -20,7 +20,7 @@ var frames = fps;
 
 //load game sprite
 var carSprite = new Image()
-carSprite.src = "image/car.webp"
+carSprite.src = "image/car2.jpg"
 
 carSprite.onload = function(){
 main()
