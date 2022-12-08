@@ -1,0 +1,9 @@
+html,body{
+    display: flex;
+    justify-content: center;
+    background-image: url(image/parallax-road15fps.gif);
+    background-size: contain;
+}
+canvas{
+    border: 1px solid black;
+}
