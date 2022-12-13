@@ -134,12 +134,13 @@ function pressKeyUp(e) {
 
 
 //asteroids class
+// how change left to right?
 function Asteroid() {
     //properties to draw the asteroids
     this.radius = randomRange(15, 2)
     this.x = randomRange(canvas.width - this.radius, this.radius)
     this.y = randomRange(canvas.height - this.radius, this.radius) - canvas.height;
-    this.vy = randomRange(1, 5)
+    this.vy = randomRange(10, 5)
     this.color = "white"
 
     // methods functions to draw
@@ -261,11 +262,11 @@ function main() {
 gameState[0] = function () {
     //code for menu
     ctx.save();
-    ctx.font = "30px Arial";
+    ctx.font = "30px fantasy";
     ctx.fillStyle = "white";
     ctx.textAlign = "center";
     ctx.fillText("Astroid Avoider", canvas.width / 2, canvas.height / 2 - 30);
-    ctx.font = "15px Arial";
+    ctx.font = "15px fantasy";
     ctx.fillText("Press Space to Start", canvas.width / 2, canvas.height / 2 + 20)
     ctx.restore();
 }
@@ -273,7 +274,7 @@ gameState[1] = function () {
     //code for the asteroids
     //draw score to screen
     ctx.save()
-    ctx.font = "15 px Arial"
+    ctx.font = "15 px fantasy"
     ctx.fillStyle = "white"
     ctx.fillText("Score;" + score.toString(), canvas.width - 150, 30)
     ctx.restore()
@@ -307,7 +308,7 @@ gameState[1] = function () {
             return;
         }
 
-
+asteroids
 
         if (asteroids[i].y > canvas.height + asteroids[i].radius) {
             asteroids[i].y = randomRange(canvas.height - asteroids[i].radius, asteroids[i].radius) - canvas.height;
@@ -338,23 +339,23 @@ gameState[2] = function () {
         highScore = score
 
         ctx.save();
-        ctx.font = "30px Arial";
+        ctx.font = "30px fantasy";
         ctx.fillStyle = "white";
         ctx.textAlign = "center";
         ctx.fillText("Gamover Your Score was: " + score.toString(), canvas.width/2, canvas.height/2 - 60)
         ctx.fillText("Your New High Score is: " + highScore.toString(), canvas.width/2, canvas.height/2 - 30)
         ctx.fillText("New Record!", canvas.width/2, canvas.height/2)
-        ctx.font = "15px Arial"
+        ctx.font = "15px fantasy"
         ctx.fillText("Press Space to Play Again", canvas.width/2, canvas.height/2 + 20)
         ctx.restore();
     }else{
         ctx.save();
-    ctx.font = "30px Arial";
+    ctx.font = "30px fantasy";
     ctx.fillStyle = "white";
     ctx.textAlign = "center";
     ctx.fillText("Game over, Your Score was: " + score.toString(), canvas.width/2, canvas.height/2 - 60)
     ctx.fillText("Your High Score is: " + highScore.toString(), canvas.width/2, canvas.height/2 - 30)
-    ctx.font = "15px Arial"
+    ctx.font = "15px fantasy"
     ctx.fillText("Press Space to Play Again", canvas.width/2, canvas.height/2 + 20)
     ctx.restore();
     }
@@ -392,6 +393,7 @@ function scoreTimer() {
         //calls scoreTimer every second
         setTimeout(scoreTimer, 1000);
     }
+
 }
 // tamp call score func
 //scoreTimer()
