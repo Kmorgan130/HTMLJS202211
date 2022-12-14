@@ -8,6 +8,21 @@ var highScore = 0;
 //adds menu
 var currentState = 0;
 var gameState = [];
+//adding images
+var mainMenu = new Image();
+mainMenu.src = "images/space2.webp"
+
+mainMenu.onload = function(){
+main()
+}
+var endScreen = new Image();
+endScreen.src = "images/gameOver.jpg"
+
+var shipSprite = new Image();
+shipSprite.src = "images/spaceship1.png"
+
+var AsteroidSprite = new Image();
+AsteroidSprite.src = "images/asteroid1.png"
 
 //asteroids variables
 var numAsteroids = 20;
@@ -151,6 +166,9 @@ function Asteroid() {
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
         ctx.closePath();
         ctx.fill();
+        
+        //drawimage here
+        ctx.drawImage(AsteroidSprite, this.x-this.radius,this.y-this.radius,this.radius*2,this.radius*2)
         ctx.restore();
 
     }
@@ -158,8 +176,8 @@ function Asteroid() {
 function PlayerShip() {
     this.x = canvas.width / 2;
     this.y = canvas.height / 2;
-    this.width = 20;
-    this.height = 20;
+    this.width = 40;
+    this.height = 40;
     this.up = false
     this.down = false
     this.left = false
@@ -194,15 +212,17 @@ function PlayerShip() {
         }
 
         // draw the ship
-        ctx.fillStyle = "red";
-        ctx.beginPath();
-        ctx.moveTo(0, -10);
-        ctx.lineTo(10, 10)
-        ctx.lineTo(-10, 10);
-        ctx.lineTo(0, -10);
-        ctx.closePath();
-        ctx.fill();
+        //ctx.fillStyle = "red";
+        //ctx.beginPath();
+        //ctx.moveTo(0, -10);
+        //ctx.lineTo(10, 10)
+        //ctx.lineTo(-10, 10);
+        //ctx.lineTo(0, -10);
+        //ctx.closePath();
+        //ctx.fill();
+        ctx.drawImage(shipSprite, -this.width/2, -this.height/2, this.width, this.height);
         ctx.restore();
+        
     }
 
     this.moveShip = function () {
@@ -259,9 +279,11 @@ function main() {
 //game State Machine
 
 //main menu state
+
 gameState[0] = function () {
     //code for menu
     ctx.save();
+    ctx.drawImage( mainMenu, 0, 0, canvas.width, canvas.height)
     ctx.font = "30px fantasy";
     ctx.fillStyle = "white";
     ctx.textAlign = "center";
@@ -339,6 +361,7 @@ gameState[2] = function () {
         highScore = score
 
         ctx.save();
+        ctx.drawImage(endScreen, 0, 0, canvas.width, canvas.height)
         ctx.font = "30px fantasy";
         ctx.fillStyle = "white";
         ctx.textAlign = "center";

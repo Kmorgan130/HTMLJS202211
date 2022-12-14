@@ -1,6 +1,7 @@
 body{
     display: flex;
     justify-content: center;
+    background-color:grey;
 }
 #container{
     width: 1000px;
@@ -48,7 +49,7 @@ footer{
     float: left;
     width: 135px;
     height: 50px;
-    background-color: grey;
+    background-color: bisque;
     text-decoration: none;
     text-align: center;
     line-height: 50px;
